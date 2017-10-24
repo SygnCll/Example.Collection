@@ -74,30 +74,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseEntityRepository.cs" />
-    <Compile Include="Contract\Dealer\IDealerDistributorRepository.cs" />
-    <Compile Include="Contract\Dealer\IDealerRepository.cs" />
     <Compile Include="Contract\ILocalizable.cs" />
-    <Compile Include="Contract\Institution\IInstitutionRepository.cs" />
-    <Compile Include="Contract\UtilityCompany\IUtilityCompanyRepository.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="EntityBase.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="ModelProxyHelper.cs" />
-    <Compile Include="Model\City.cs" />
-    <Compile Include="Model\Dealer.cs" />
-    <Compile Include="Model\DealerDistributor.cs" />
-    <Compile Include="Model\DealerEmailAddress.cs" />
-    <Compile Include="Model\DealerLocalization.cs" />
-    <Compile Include="Model\DealerPhoneNumber.cs" />
-    <Compile Include="Model\DealerType.cs" />
-    <Compile Include="Model\Distributor.cs" />
-    <Compile Include="Model\DistributorLocalization.cs" />
-    <Compile Include="Model\Institution.cs" />
-    <Compile Include="Model\InstitutionLocalization.cs" />
-    <Compile Include="Model\Region.cs" />
-    <Compile Include="Model\Town.cs" />
-    <Compile Include="Model\UtilityCompany.cs" />
-    <Compile Include="Model\UtilityCompanyLocalization.cs" />
     <Compile Include="NHibernateMapping\Dealer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Dealer\DealerDistributorRepository.cs" />
@@ -107,10 +88,13 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Example.Collection.Domain\Example.Collection.Domain.csproj">
+      <Project>{80328ba8-c606-45fc-995a-644eb34f4452}</Project>
+      <Name>Example.Collection.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Example.Collection.Infrastructure\Example.Collection.Infrastructure.csproj">
       <Project>{9fa26075-0d3a-4423-854c-d233268209a3}</Project>
       <Name>Example.Collection.Infrastructure</Name>

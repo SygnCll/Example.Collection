@@ -1,14 +1,15 @@
 ﻿
 using System.Linq;
+using Example.Collection.Domain;
 using System.Collections.Generic;
 using Example.Collection.Infrastructure;
-using Example.Collection.Repository.Model;
-using Example.Collection.Repository.Contract;
+using Example.Collection.Domain.Contract;
 using Example.Collection.Infrastructure.Enum;
 using NHibernate.Linq;
 using NHibernate;
 using NHibernate.SqlCommand;
 using NHibernate.Util;
+
 
 namespace Example.Collection.Repository
 {

@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NHibernate; 
+using System.Data; 
 
 namespace Example.Collection.Infrastructure.NHibernate
 {
     public class UnitOfWork : UnitOfWorkBase
     {
-        public UnitOfWork(ISession session, ILocalData<string, IUnitOfWork> localData, string factoryKey, IsolationLevel isolationLevel)
-            : base(localData, factoryKey, isolationLevel)
+        public UnitOfWork(ISession session, ILocalData<string, IUnitOfWork> localData, string factoryKey, IsolationLevel isolationLevel) : base(localData, factoryKey, isolationLevel)
         {
             this.Session = session;
             this.IsolationLevel = isolationLevel;
@@ -70,8 +66,6 @@ namespace Example.Collection.Infrastructure.NHibernate
             {
                 return;
             }
-
-            //// CurrentSessionContext.Unbind(this.Session.SessionFactory);
 
             if (!this.Session.IsOpen)
             {

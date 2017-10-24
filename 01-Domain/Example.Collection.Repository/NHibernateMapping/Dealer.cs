@@ -1,6 +1,5 @@
-﻿
-using FluentNHibernate.Mapping;
-using Example.Collection.Repository.Model;
+﻿using FluentNHibernate.Mapping;
+using Example.Collection.Domain;
 using Example.Collection.Infrastructure.Enum;
 
 namespace Example.Collection.Repository.NHibernateMapping

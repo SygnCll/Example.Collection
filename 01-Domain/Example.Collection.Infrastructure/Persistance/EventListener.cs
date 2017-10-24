@@ -1,4 +1,4 @@
-﻿namespace Example.Collection.Infrastructure.Persistance
+﻿namespace Example.Collection.Infrastructure
 {
     public class EventListener
     {

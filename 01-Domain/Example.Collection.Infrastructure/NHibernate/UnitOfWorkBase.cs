@@ -7,12 +7,12 @@ namespace Example.Collection.Infrastructure.NHibernate
     public abstract class UnitOfWorkBase : IUnitOfWork
     {
         private readonly IList<Action> successHandlers;
-        
+        private readonly ILocalData<string, IUnitOfWork> localData;
 
-        public UnitOfWorkBase(string factorykey, IsolationLevel isolationLevel = IsolationLevel.Unspecified)
+        public UnitOfWorkBase(ILocalData<string, IUnitOfWork> localData, string factorykey, IsolationLevel isolationLevel = IsolationLevel.Unspecified)
         {
             successHandlers = new List<Action>();
-
+            this.localData = localData;
             this.IsInTransaction = false;
             this.FactoryKey = factorykey;
         }

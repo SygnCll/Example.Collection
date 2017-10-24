@@ -1,10 +1,9 @@
-﻿using NHibernate;
-using System.Linq;
+﻿using System.Linq;
 using NHibernate.Linq;
+using Example.Collection.Domain;
 using System.Collections.Generic;
 using Example.Collection.Infrastructure;
-using Example.Collection.Repository.Model;
-using Example.Collection.Repository.Contract;
+using Example.Collection.Domain.Contract;
 using Example.Collection.Infrastructure.Enum;
 
 namespace Example.Collection.Repository
@@ -12,11 +11,11 @@ namespace Example.Collection.Repository
     public class UtilityCompanyRepository : BaseEntityRepository<UtilityCompany>, IUtilityCompanyRepository
     {
         public UtilityCompanyRepository(IRepository<UtilityCompany> repository) : base(repository) { }
-        
-        
+
+
         public ICollection<UtilityCompany> Get(Institution institution)
         {
-            var items = Repository.Get(utilityCompany => utilityCompany.Status == StatusTypeEnum.Available && 
+            var items = Repository.Get(utilityCompany => utilityCompany.Status == StatusTypeEnum.Available &&
                                                          utilityCompany.Institutions.Any(x => x == institution))
                                   .Fetch(f => f.UtilityCompanyLocalization)
                                   .ToList();
@@ -62,6 +61,6 @@ namespace Example.Collection.Repository
             throw new System.NotImplementedException();
         }
 
-        
+
     }
 }
